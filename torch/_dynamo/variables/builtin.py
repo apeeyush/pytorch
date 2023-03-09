@@ -10,9 +10,10 @@ from typing import Dict, List
 import torch
 from torch import sym_float, sym_int
 
-from .. import config, variables
+from .. import variables
 from ..allowed_functions import is_allowed
 from ..exc import unimplemented, Unsupported, UserError, UserErrorType
+from ..config_utils import config
 from ..guards import GuardBuilder
 from ..replay_record import DummyModule
 from ..source import AttrSource, is_constant_source, SuperSource, TypeSource

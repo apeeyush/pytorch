@@ -27,7 +27,7 @@ from typing import Any, Dict, Tuple, Union
 
 import torch._logging
 from torch._guards import detect_fake_mode  # noqa: F401
-from . import config
+from .config_utils import config
 
 try:
     import numpy as np
@@ -46,6 +46,9 @@ from torch._dispatch.python import enable_python_dispatcher
 from torch._subclasses.fake_tensor import FakeTensor
 from torch.nn.modules.lazy import LazyModuleMixin
 from torch.utils._pytree import tree_map
+
+from . import logging as torchdynamo_logging
+from .config_utils import config
 
 counters = collections.defaultdict(collections.Counter)
 troubleshooting_url = "https://pytorch.org/docs/master/compile/troubleshooting.html"
