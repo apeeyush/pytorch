@@ -21,10 +21,10 @@ import time
 import types
 import typing
 import weakref
+from collections import UserDict
 from contextlib import contextmanager
 from functools import lru_cache, wraps
 from typing import Any, Dict, List, Tuple, Union
-from collections import UserDict
 
 import torch._logging
 from . import config
