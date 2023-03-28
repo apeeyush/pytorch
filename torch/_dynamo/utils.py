@@ -24,6 +24,7 @@ import weakref
 from contextlib import contextmanager
 from functools import lru_cache, wraps
 from typing import Any, Dict, List, Tuple, Union
+from collections import UserDict
 
 import torch._logging
 from . import config
@@ -555,7 +556,7 @@ def clone_input(x):
 
 
 def clone_inputs(example_inputs):
-    if isinstance(example_inputs, dict):
+    if isinstance(example_inputs, (dict, UserDict)):
         res = dict(example_inputs)
         for key, value in res.items():
             assert isinstance(value, torch.Tensor)
